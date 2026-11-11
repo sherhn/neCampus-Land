@@ -3,83 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="neCampus — неофициальный клиент кампуса ЮЗГУ. Расписание, учебные баллы, новости и карта корпусов в одном приложении.">
-  <meta name="theme-color" content="#171a17">
-  <title>neCampus — студенческий день под рукой</title>
+  <meta name="description" content="neCampus — неофициальный клиент кампуса ЮЗГУ. Расписание, учебные баллы, корпуса и новости в одном приложении.">
+  <meta name="theme-color" content="#ffffff">
+  <title>neCampus — студенческий день ЮЗГУ</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/Montserrat-Bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">N</span>neCampus</a>
-      <a class="header-link" href="#features">Возможности <span aria-hidden="true">↘</span></a>
-    </div>
+  <header class="header wrap">
+    <a class="brand" href="#top" aria-label="neCampus, начало страницы">
+      <span class="brand-mark" aria-hidden="true">N</span>neCampus
+    </a>
+    <nav aria-label="Разделы страницы">
+      <a href="#screens">Экраны</a>
+      <a href="#features">Возможности</a>
+    </nav>
   </header>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-inner">
-        <div class="intro">
-          <p class="label"><span class="status-dot"></span> Неофициальный клиент кампуса ЮЗГУ</p>
-          <h1 id="hero-title">Студенческий<br>день под рукой<span>.</span></h1>
-          <p class="hero-description">Проверь пары, найди нужный корпус и узнай, как идут дела с учёбой. Всё в одном приложении.</p>
-          <a class="button" href="#features">Что внутри <span aria-hidden="true">↓</span></a>
-        </div>
-        <figure class="preview">
-          <div class="phone" aria-hidden="true">
-            <div class="phone-camera"></div>
-            <div class="phone-brand"><span class="brand-mark">N</span>neCampus</div>
-            <div class="phone-content">
-              <p class="phone-date">Понедельник, 16 ноября</p>
-              <p class="phone-title">Сегодня</p>
-              <div class="lesson next">
-                <div class="lesson-time">09:40 <span>Следующая пара</span></div>
-                <strong>Базы данных</strong>
-                <small>Практика · аудитория 302</small>
-              </div>
-              <div class="lesson">
-                <div class="lesson-time">11:30</div>
-                <strong>Математический анализ</strong>
-                <small>Лекция · аудитория 218</small>
-              </div>
-            </div>
-            <div class="phone-tabs"><span>Сегодня</span><span>Пары</span><span>Карта</span><span>Баллы</span></div>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Неофициальный клиент кампуса ЮЗГУ</p>
+        <h1 id="hero-title">От первой пары до зачёта.</h1>
+        <p class="intro">Узнай, куда идти на следующую пару, проверь баллы и загляни в новости кампуса.</p>
+        <a class="button" href="#screens">Посмотреть экраны <span aria-hidden="true">↘</span></a>
+      </div>
+      <figure class="hero-figure">
+        <div class="hero-art">
+          <div class="rings" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="phone phone-rear" aria-hidden="true">
+            <img src="assets/schedule-dark.png" alt="" width="390" height="844">
           </div>
-          <figcaption>Пример экрана с вымышленным расписанием</figcaption>
+          <div class="phone phone-front" aria-hidden="true">
+            <img src="assets/today-light.png" alt="" width="390" height="844" fetchpriority="high">
+          </div>
+        </div>
+        <figcaption>Экраны приложения с тестовыми данными</figcaption>
+      </figure>
+    </section>
+
+    <section class="screens wrap" id="screens" aria-labelledby="screens-title">
+      <div class="section-heading">
+        <h2 id="screens-title">Как выглядит neCampus</h2>
+        <p>Светлая и тёмная темы, нижняя панель на телефоне и боковое меню на широком экране.</p>
+      </div>
+      <div class="screen-grid">
+        <figure class="screen">
+          <div class="screen-image screen-light">
+            <img src="assets/today-light.png" alt="Экран «Сегодня» в светлой теме. В карточке следующей пары указаны предмет, время и аудитория." width="390" height="844" loading="lazy">
+          </div>
+          <figcaption><strong>Сегодня</strong><span>Следующая пара и план на день</span></figcaption>
+        </figure>
+        <figure class="screen">
+          <div class="screen-image screen-dark">
+            <img src="assets/schedule-dark.png" alt="Расписание в тёмной теме. В верхней части можно выбрать день недели." width="390" height="844" loading="lazy">
+          </div>
+          <figcaption><strong>Расписание</strong><span>Пары и аудитории по дням недели</span></figcaption>
+        </figure>
+        <figure class="screen screen-wide">
+          <div class="screen-image screen-dark">
+            <img src="assets/points-desktop.png" alt="Раздел «Баллы» на широком экране. Слева меню, справа баллы за семестр, рейтинг и предметы." width="1280" height="820" loading="lazy">
+          </div>
+          <figcaption><strong>Баллы</strong><span>Успеваемость и рейтинг за семестр</span></figcaption>
         </figure>
       </div>
     </section>
+
     <section class="features wrap" id="features" aria-labelledby="features-title">
-      <h2 id="features-title">Возможности</h2>
-      <div class="feature-grid">
-        <article class="feature">
-          <span class="feature-icon calendar-icon" aria-hidden="true"></span>
-          <h3>Расписание</h3>
-          <p>Смотри, какая пара следующая и в какой аудитории она пройдёт.</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon points-icon" aria-hidden="true"></span>
-          <h3>Учебные баллы</h3>
-          <p>Следи за своей успеваемостью по дисциплинам в разделе «Баллы».</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon map-icon" aria-hidden="true"></span>
-          <h3>Карта корпусов</h3>
-          <p>Уточни, где находится корпус или аудитория, до начала пары.</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon news-icon" aria-hidden="true"></span>
-          <h3>Новости</h3>
-          <p>Читай объявления и новости из ленты кампуса.</p>
-        </article>
-      </div>
+      <h2 id="features-title">Ещё в приложении</h2>
+      <dl>
+        <div>
+          <dt>Мой ЮЗГУ</dt>
+          <dd>Корпуса, аудитории, факультеты и подразделения университета.</dd>
+        </div>
+        <div>
+          <dt>Новости</dt>
+          <dd>Объявления и новости из ленты кампуса.</dd>
+        </div>
+        <div>
+          <dt>Профиль</dt>
+          <dd>Данные об учёбе, факультете и группе.</dd>
+        </div>
+      </dl>
     </section>
   </main>
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">N</span>neCampus</a>
-      <a class="footer-link" href="https://campus.swsu.ru/">Официальный портал ЮЗГУ <span aria-hidden="true">↗</span></a>
-    </div>
+  <footer class="footer wrap">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">N</span>neCampus</a>
+    <a href="https://campus.swsu.ru/">Официальный портал ЮЗГУ <span aria-hidden="true">↗</span></a>
   </footer>
 </body>
 </html>
